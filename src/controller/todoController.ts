@@ -64,7 +64,7 @@ export const updateTodo = async (req:Request, res:Response) => {
     }
 }
 
-export const removeTodo = async (req:Request, res:Response) => {
+export const deleteTodo = async (req:Request, res:Response) => {
     try{
         const id = req.params.id;
         const removedtodo = await Todo.findOneAndDelete({"_id": id})
@@ -77,7 +77,7 @@ export const removeTodo = async (req:Request, res:Response) => {
     }catch(err){
         return res.status(500).json({
             message: 'internal server error',
-            routes: 'todo/remove-todo/:id'
+            routes: 'todo/delete/:id'
          })
     }
 }

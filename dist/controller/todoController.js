@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.removeTodo = exports.updateTodo = exports.createTodo = exports.getTodo = void 0;
+exports.deleteTodo = exports.updateTodo = exports.createTodo = exports.getTodo = void 0;
 const todoModel_1 = __importDefault(require("../model/todoModel"));
 const getTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -73,7 +73,7 @@ const updateTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.updateTodo = updateTodo;
-const removeTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const id = req.params.id;
         const removedtodo = yield todoModel_1.default.findOneAndDelete({ "_id": id });
@@ -87,8 +87,8 @@ const removeTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     catch (err) {
         return res.status(500).json({
             message: 'internal server error',
-            routes: 'todo/remove-todo/:id'
+            routes: 'todo/delete/:id'
         });
     }
 });
-exports.removeTodo = removeTodo;
+exports.deleteTodo = deleteTodo;

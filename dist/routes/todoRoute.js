@@ -9,5 +9,5 @@ const userRouter = express_1.default.Router();
 userRouter.post("/create", todoController_1.createTodo);
 userRouter.get("/get", todoController_1.getTodo);
 userRouter.patch("/updateTodo/:id", todoController_1.updateTodo);
-userRouter.delete("/remove-todo/:id", todoController_1.removeTodo);
+userRouter.delete("/delete/:id", todoController_1.deleteTodo);
 exports.default = userRouter;
