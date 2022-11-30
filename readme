@@ -1,0 +1,37 @@
+brew services start mongodb-community
+
+
+
+eEtqa91PsZVNLQlI
+
+
+
+example of  database creatiion: db.createCollection('super_admin');
+
+
+
+type show databases; to show all the database in your mongodb
+
+
+
+to use  a particular database: type use databasename
+
+
+
+to delete a collection:go into the collection u want to delete and  type db.dropDatabase();
+
+
+
+example of creating a document inside a collection:db.products.insert({"price":"5000","foodType":"veggies"});
+
+
+
+to create a database: type use(which automatically creates a database but it will not show until u create a collection inside it)
+
+aggregations are criteria for querries in json format.
+aggregations are used to do calculations...
+Pipelines are a series of aggreagation and stages and they can be in form of arrays
+when sorting db."collection name".find().sort({"key":1/-1}(for ascending or descending respectively))(use 1 for ascending order and -1 for descending order)
+var pipeline = [
+{$sort:{"price": -1}},{$limit:1}]
+db.shop.aggregate(pipeline)
