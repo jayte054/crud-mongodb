@@ -55,6 +55,9 @@ export const updateTodo = async (req:Request, res:Response) => {
                 message:"updated successfully"
             })
         }
+        res.status(400).json({
+            message:"update error"
+        })
 
     }catch(error){
         return res.status(500).json({

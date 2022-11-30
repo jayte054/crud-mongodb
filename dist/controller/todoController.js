@@ -64,6 +64,9 @@ const updateTodo = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
                 message: "updated successfully"
             });
         }
+        res.status(400).json({
+            message: "update error"
+        });
     }
     catch (error) {
         return res.status(500).json({
